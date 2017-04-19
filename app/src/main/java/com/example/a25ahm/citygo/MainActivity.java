@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ArrayList<String> Museacomments = new ArrayList<>(Arrays.asList("start musea", "musea", "museum"));
-       ArrayList<String> Bezienswaardighedencomments = new ArrayList<>(Arrays.asList("Bezienswaardigheid", "bezien", "beziens"));
-        ArrayList<String> Restaurantsdisplay = new ArrayList<>(Arrays.asList("Restaurant", "Restaur", "Res"));
+        ArrayList<String> museacomments = new ArrayList<>(Arrays.asList("start musea", "musea", "museum"));
+        ArrayList<String> bezienswaardighedencomments = new ArrayList<>(Arrays.asList("Bezienswaardigheid", "bezien", "beziens"));
+        ArrayList<String> restaurantsdisplay = new ArrayList<>(Arrays.asList("Restaurant", "Restaur", "Res"));
         ArrayList<String> cafescomment = new ArrayList<>(Arrays.asList("cafe", "cafes"));
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -76,19 +76,19 @@ public class MainActivity extends AppCompatActivity {
                     txtSpeechInput.setText(result.get(0));
 
 
-                    if (Museacomments.contains(result.get(0))) {
+                    if (containsCaseInsensitive(result.get(0), museacomments)) {
                         but4(findViewById(R.id.button4));
                     }
-                    if (Bezienswaardighedencomments.contains(result.get(0))) {
+                    if (containsCaseInsensitive(result.get(0), bezienswaardighedencomments)) {
                         But1(findViewById(R.id.button1));
                     }
 
-                    if (Restaurantsdisplay.contains(result.get(0))) {
+                    if (containsCaseInsensitive(result.get(0), restaurantsdisplay)) {
                         but2(findViewById(R.id.button2));
                     }
 
-                    if (cafescomment.contains(result.get(0))) {
-                       but3(findViewById(R.id.button3));
+                    if (containsCaseInsensitive(result.get(0), cafescomment)) {
+                        but3(findViewById(R.id.button3));
                     }
 
                 }
@@ -130,6 +130,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(b4);
 
         }
+    }
+
+    public boolean containsCaseInsensitive(String s, ArrayList<String> l) {
+        for (String string : l) {
+            if (string.equalsIgnoreCase(s)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
