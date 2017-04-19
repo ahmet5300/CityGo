@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ArrayList<String> Museacomments = new ArrayList<>(Arrays.asList("start musea", "musea", "museaum"));
-        ArrayList<String> Bezienswaardighedencomments = new ArrayList<>(Arrays.asList("Bezienswaardigheid", "bezien", "beziens"));
+        ArrayList<String> Museacomments = new ArrayList<>(Arrays.asList("start musea", "musea", "museum"));
+       ArrayList<String> Bezienswaardighedencomments = new ArrayList<>(Arrays.asList("Bezienswaardigheid", "bezien", "beziens"));
         ArrayList<String> Restaurantsdisplay = new ArrayList<>(Arrays.asList("Restaurant", "Restaur", "Res"));
         ArrayList<String> cafescomment = new ArrayList<>(Arrays.asList("cafe", "cafes"));
         super.onActivityResult(requestCode, resultCode, data);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     if (cafescomment.contains(result.get(0))) {
-                        but3(findViewById(R.id.button3));
+                       but3(findViewById(R.id.button3));
                     }
 
                 }
