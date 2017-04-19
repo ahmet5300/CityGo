@@ -9,6 +9,12 @@
     tools:layout_editor_absoluteX="0dp"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -36,6 +42,12 @@
         android:layout_height="wrap_content"
         android:onClick="but4"
         android:text="Musea" />
+
+    <Button
+        android:id="@+id/btnSpeak"
+        android:layout_width="189dp"
+        android:layout_height="wrap_content"
+        android:text="CLick to speak" />
 
 
 </LinearLayout>
